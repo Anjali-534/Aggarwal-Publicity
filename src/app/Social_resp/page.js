@@ -52,7 +52,7 @@ function BannerSection() {
   };
 
   return (
-    <section className="relative h-screen bg-blue-200 text-white flex items-center justify-center px-6">
+    <section className="relative h-screen text-white flex items-center justify-center px-6">
       <div className="relative w-full h-full mx-auto">
         <Slider {...settings}>
           {bannerImages.map((src, index) => (
@@ -73,7 +73,7 @@ function BannerSection() {
 
 function CommunitySection() {
   return (
-    <section className="bg-blue-200 text-center py-13 px-6">
+    <section className=" text-center py-13 px-6">
       <div className="container mx-auto">
         {/* Title */}
         <h1 className="text-3xl font-bold text-gray-900">
@@ -124,7 +124,7 @@ function CommunitySection() {
 }
 function Aim() {
   return (
-    <section className="bg-blue-300 text-center py-13 px-6">
+    <section className="bg-amber-300 text-center py-13 px-6">
         <h3 className="text-lg ml-1.5 font-semibold">Our Aim</h3>
         <h2 className="text-4xl font-bold mt-2">The Director</h2>
       <div className="container mx-auto">
@@ -142,7 +142,47 @@ function Aim() {
         );
         }
 
-
+        function GallerySection() {
+          const galleryImages = [
+            "/gallery1.jpeg",
+            "/gallery2.jpeg",
+            "/gallery3.jpeg",
+            "/gallery4.jpeg",
+            "/gallery5.jpeg",
+           
+            "/gallery2.jpeg",
+            "/gallery3.jpeg",
+            "/gallery4.jpeg",
+           
+           
+          ];
+        
+          return (
+            <section className="py-16 px-6 ">
+              <div className="container mx-auto text-center">
+                {/* Heading */}
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Gallery</h2>
+                <p className="text-lg text-gray-700 mb-10">
+                  A glimpse of our journey, events, and community initiatives.
+                </p>
+        
+                {/* Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {galleryImages.map((src, index) => (
+                    <div key={index} className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <img 
+                        src={src} 
+                        alt={`Gallery ${index + 1}`} 
+                        className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        }
+        
 
 
 
@@ -153,6 +193,7 @@ export default function HomePage() {
       <BannerSection />
       <CommunitySection/>
       <Aim/>
+      <GallerySection />
     </div>
   );
 }

@@ -140,7 +140,7 @@ function AboutSection() {
   };
 
   return (
-    <section className=" mx-auto bg-amber-100 px-15 py-22 flex flex-col md:flex-row items-center gap-8">
+    <section className=" mx-auto  px-15 py-22 flex flex-col md:flex-row items-center gap-8">
   <div className="md:w-1/2">
     <h3 className="text-blue-500 font-semibold">Our Products</h3>
     <h1 className="text-5xl font-bold mt-4">We are <span className="text-red-500">Aggarwal Publicity & Marketing</span></h1>
@@ -318,7 +318,7 @@ function SustainabilitySection() {
 function Director() {
   return (
     <motion.section
-      className="bg-yellow-500 text-black py-16 px-15 flex flex-col md:flex-row items-center"
+      className=" text-black py-16 px-15 flex flex-col md:flex-row items-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

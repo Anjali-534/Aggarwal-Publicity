@@ -50,7 +50,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="py-20  mt-8 bg-yellow-100 text-gray-700">
+    < div className="py-20  mt-8  text-gray-700">
       <div className="mx-auto">
         {/* Title Section */}
         <h1 className="text-4xl px-15 font-bold text-blue-900 mb-6">Our Journey</h1>
@@ -87,28 +87,38 @@ export default function AboutPage() {
     ))}
   </div>
 </div>
-<section className="relative py-16 px-4 md:px-12  lg:px-24" style={{ backgroundImage: 'url(/banner3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' ,filter: 'grayscale(100%)'}}>
-      <div className="flex flex-col md:flex-row items-center gap-10">
-        {/* Left - Text Block */}
-        <div className="bg-yellow-900 opacity-90 text-white p-8 rounded-2xl shadow-lg max-w-xl w-full">
-          <h4 className="text-sm font-semibold mb-2">INNOVATION @ AGGARWAL PUBLICITY & MARKETING Pvt. Ltd.</h4>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-            Paving New Paths with <br /> Research & Development
-          </h2>
-          <p className="italic text-gray-200 mb-4">
-            Innovation that is respected, recognised and rewarded.
-          </p>
-          <p className="text-sm text-gray-100 mb-2">
-            For over four decades, we have established our credentials in creativity and innovation. We are not shy in seizing opportunities, and we give ideas the space to grow. It is why two thirds of our sales come from in-house innovations.
-          </p>
-          <p className="text-sm text-gray-100">
-            Our ideas are powered by three fully equipped Pidilite R&D centres in India, two Pidilite Subsidiary R&D centres in Baroda (R&D ICA) and Kishanpore (R&D Group normal), and a cutting-edge technical and...
-          </p>
-        </div>
+<section className="relative py-16 px-4 md:px-12 lg:px-24 overflow-hidden">
+  {/* Background Image Layer with Grayscale */}
+  <div
+    className="absolute inset-0 bg-cover bg-center filter grayscale"
+    style={{
+      backgroundImage: "url('/banner3.jpg')",
+      zIndex: -1
+    }}
+  ></div>
 
-       
-      </div>
-    </section>
+  {/* Foreground Content Layer */}
+  <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
+    <div className="bg-yellow-900 opacity-90 text-white p-8 rounded-2xl shadow-lg max-w-xl w-full">
+      <h4 className="text-sm font-semibold mb-2">
+        INNOVATION @ AGGARWAL PUBLICITY & MARKETING Pvt. Ltd.
+      </h4>
+      <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+        Paving New Paths with <br /> Research & Development
+      </h2>
+      <p className="italic text-gray-200 mb-4">
+        Innovation that is respected, recognised and rewarded.
+      </p>
+      <p className="text-sm text-gray-100 mb-2">
+        For over four decades, we have established our credentials in creativity and innovation. We are not shy in seizing opportunities, and we give ideas the space to grow. It is why two thirds of our sales come from in-house innovations.
+      </p>
+      <p className="text-sm text-gray-100">
+        Our ideas are powered by three fully equipped Pidilite R&D centres in India, two Pidilite Subsidiary R&D centres in Baroda (R&D ICA) and Kishanpore (R&D Group normal), and a cutting-edge technical and...
+      </p>
+    </div>
+  </div>
+</section>
+
 
       </div>
     </div>
