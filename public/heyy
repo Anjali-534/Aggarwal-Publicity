@@ -1,0 +1,146 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FiMenu, FiX } from "react-icons/fi";
+
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCloseMenu = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <> 
+      {/* Desktop Header */}
+        <div className="fixed hidden md:flex top-0 left-0 w-full bg-[#2B3380] px-[2px] h-[85px] z-50 shadow-sm items-center justify-between">
+        <div className="flex items-start ml-5">
+  <Link href="/">
+  <div className="flex items-center space-x-6 w-3/4">
+        {  /* Logo Section */}
+                <a href="/" className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
+                <img src="/logo.jpg" alt="Logo" className="h-10" />
+                </a>
+                <div className="flex flex-col space-y-1">
+                <h1 className="text-xl md:text-2xl text-red-800 font-bold">
+                  Aggarwal Publicity & Marketing Pvt. Ltd.
+                </h1>
+                <h6 className="text-xs text-blue-950 font-semibold">
+                  Importer, Exporter, Distributors and Wholesaler of Industrial Chemical Products
+                </h6>
+                </div>
+                </div>
+  </Link>
+</div>
+      
+</div>
+
+
+
+      {/* Mobile Header */}
+        <div className="md:hidden fixed top-0 left-0 w-full bg-white px-4 h-[60px] flex items-center justify-between z-50 shadow-md">
+          <div className="flex items-center gap-3">
+            <MobileHamburger onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+            <Link href="/">
+          <video
+            src="/Assets/logo4.mp4"
+            autoPlay
+            loop
+            muted
+            className="cursor-pointer w-auto max-h-[36px] min-h-[15px] min-w-[15px] h-auto"
+          />
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Links */}
+      {isOpen && (
+        <div className="md:hidden fixed z-[9999] bg-white shadow-md flex flex-col w-[90%] items-center py-4 space-y-4 ">
+          <Link href="/offerPage" onClick={handleCloseMenu}>Flash Sale</Link>
+          <Link href="/buyMobile" onClick={handleCloseMenu}>Buy Mobiles</Link>
+          <Link href="/buyLaptop" onClick={handleCloseMenu}>Buy Laptops</Link>
+          <Link href="/refurbished" onClick={handleCloseMenu}>Why Refurbished</Link>
+          <Link href="/wholesaler" onClick={handleCloseMenu}>Wholesale (B2B)</Link>
+          <Link href="/channelPartner" onClick={handleCloseMenu}> Channel Partner</Link>
+          <Dropdown onClose={handleCloseMenu} />
+          
+        </div>
+      )}
+    </>
+  );
+}
+
+const MobileHamburger = ({ onClick, isOpen }) => (
+  <button onClick={onClick} className="text-black text-2xl">
+    {isOpen ? <FiX /> : <FiMenu />}
+  </button>
+);
+
+const Dropdown = ({ onClose }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleClick = (path) => {
+    onClose?.();
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="relative inline-block text-left" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="focus:outline-none flex items-center text-sm md:text-base"
+      >
+        More <Image src={icon} alt="down" className="pl-1 w-4 h-4" />
+      </button>
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50">
+          <Link href="/login" className="block px-4 py-2 hover:bg-gray-100" onClick={handleClick}>
+            Login/Signup
+          </Link>
+          <Link href="/warranty" className="block px-4 py-2 hover:bg-gray-100" onClick={handleClick}>
+            Warranty
+          </Link>
+          <Link href="/blog" className="block px-4 py-2 hover:bg-gray-100" onClick={handleClick}>
+            Blog
+          </Link>
+          <Link href="/track-order" className="block px-4 py-2 hover:bg-gray-100" onClick={handleClick}>
+            Track Order
+          </Link>
+          <Link href="/faq" className="block px-4 py-2 hover:bg-gray-100" onClick={handleClick}>
+            FAQ
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export function SubNav() {
+  return (
+    <nav className="fixed top-[72px] md:top-[85px] w-full font-medium h-auto bg-white shadow-md z-40">
+      <div className="hidden md:flex font-semibold justify-center text-sm md:text-base space-x-3 md:space-x-22 py-4">
+        <Link href="/offerPage">Flash Sale</Link>
+        <Link href="/buyMobile">Buy Mobiles</Link>
+        <Link href="/buyLaptop">Buy Laptops</Link>
+        <Link href="/refurbished">Why Refurbished</Link>
+        <Link href="/wholesaler">Wholesale (B2B)</Link>
+        <Link href="/channelPartner">Channel Partner</Link>
+        <Dropdown />
+      </div>
+    </nav>
+  );
+}
