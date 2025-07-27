@@ -18,7 +18,8 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-4">
             {/* Logo */}
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-              <img src="/logo.jpg" alt="Logo" className="h-10" />
+              <Image src="/logo.jpg" alt="Logo" className="h-10" 
+               />
             </div>
 
             {/* Company Info */}
@@ -49,10 +50,13 @@ export default function Header() {
           <MobileHamburger onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
           <Link href="/">
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src="/logo.jpg"
                 alt="Logo"
+                width={36}
+                height={36}
                 className="w-9 h-9 rounded-full object-cover"
+                priority
               />
               <h1 className="text-sm font-bold text-red-800 leading-tight">
                 Aggarwal Publicity & Marketing Pvt. Ltd.

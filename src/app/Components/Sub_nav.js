@@ -1,5 +1,6 @@
 "use client"; 
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 export default function SubNav() {
@@ -72,7 +73,14 @@ const Dropdown = ({ title, links, src, alt, className }) => {
           {/* Show Image if Provided */}
           {src && (
             <div className="flex justify-center">
-              <img src={src} alt={alt} className={`${className} mb-2`} />
+              <Image
+                src={src}
+                alt={alt}
+                width={120}
+                height={120}
+                className={`${className} mb-2`}
+                priority
+              />
             </div>
           )}
 

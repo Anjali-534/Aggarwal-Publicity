@@ -77,43 +77,43 @@ function CommunitySection() {
       <div className="container mx-auto">
         {/* Title */}
         <h1 className="text-3xl font-bold text-gray-900">
-        Aggarwal Publicity Contributes to Social Work Through  <br /> "Hamara Book Bank"
+        Aggarwal Publicity Contributes to Social Work Through  <br /> &quot;Hamara Book Bank&quot;
         </h1>
 
         {/* Description */}
         <p className="text-lg text-gray-900 mt-6 max-w-3xl mx-auto">
-          At <span className="text-red-500">Aggarwal Publicity & Marketing Pvt. Ltd.</span>, we believe in giving back to society and fostering a culture of education and empowerment. As part of our corporate social responsibility, we proudly support "Hamara Book Bank", an initiative dedicated to making education accessible to underprivileged students.
+          At <span className="text-red-500">Aggarwal Publicity & Marketing Pvt. Ltd.</span>, we believe in giving back to society and fostering a culture of education and empowerment. As part of our corporate social responsibility, we proudly support &quot;Hamara Book Bank&quot;, an initiative dedicated to making education accessible to underprivileged students.
         </p>
 
         {/* Initiative Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
           {/* Agriculture & Horticulture */}
           <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <img src="/agriculture-icon.png" alt="Agriculture & Horticulture" className="w-12 h-12 mb-2" />
+            <Image src="/agriculture-icon.png" alt="Agriculture & Horticulture" width={48} height={48} className="w-12 h-12 mb-2" priority />
             <p className="font-semibold">Agriculture & Horticulture Initiative</p>
           </div>
 
           {/* Women's Initiative */}
           <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <img src="/women-icon.png" alt="Women's Initiative" className="w-12 h-12 mb-2 opacity-50" />
+            <Image src="/women-icon.png" alt="Women&apos;s Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
             <p className="font-semibold">Women’s Initiative</p>
           </div>
 
           {/* Education Initiative */}
           <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <img src="/education-icon.png" alt="Education Initiative" className="w-12 h-12 mb-2 opacity-50" />
+            <Image src="/education-icon.png" alt="Education Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
             <p className="font-semibold">Education Initiative</p>
           </div>
 
           {/* Water Initiative */}
           <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <img src="/water-icon.png" alt="Water Initiative" className="w-12 h-12 mb-2 opacity-50" />
+            <Image src="/water-icon.png" alt="Water Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
             <p className="font-semibold">Water Initiative</p>
           </div>
 
           {/* Skill Initiative */}
           <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <img src="/skill-icon.png" alt="Skill Initiative" className="w-12 h-12 mb-2 opacity-50" />
+            <Image src="/skill-icon.png" alt="Skill Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
             <p className="font-semibold">Skill Initiative</p>
           </div>
           
@@ -130,12 +130,12 @@ function Aim() {
       <div className="container mx-auto">
         {/* Title */}
         <h1 className="text-3xl  font-bold text-gray-900">
-        Aggarwal Publicity Contributes to Social Work Through  <br /> "Hamara Book Bank"
+        Aggarwal Publicity Contributes to Social Work Through  <br /> &quot;Hamara Book Bank&quot;
         </h1>
 
         {/* Description */}
         <p className="text-lg text-gray-900 mt-6 max-w-3xl mx-auto">
-          At <span className="text-red-500">Aggarwal Publicity & Marketing Pvt. Ltd.</span>, we believe in giving back to society and fostering a culture of education and empowerment. As part of our corporate social responsibility, we proudly support "Hamara Book Bank", an initiative dedicated to making education accessible to underprivileged students.
+          At <span className="text-red-500">Aggarwal Publicity & Marketing Pvt. Ltd.</span>, we believe in giving back to society and fostering a culture of education and empowerment. As part of our corporate social responsibility, we proudly support &quot;Hamara Book Bank&quot;, an initiative dedicated to making education accessible to underprivileged students.
         </p>
         </div>
         </section>
@@ -170,10 +170,13 @@ function Aim() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {galleryImages.map((src, index) => (
                     <div key={index} className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <img 
-                        src={src} 
-                        alt={`Gallery ${index + 1}`} 
+                      <Image
+                        src={src}
+                        alt={`Gallery ${index + 1}`}
+                        width={400}
+                        height={256}
                         className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                        priority
                       />
                     </div>
                   ))}

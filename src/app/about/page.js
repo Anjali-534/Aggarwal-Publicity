@@ -57,7 +57,7 @@ export default function AboutPage() {
 
         {/* Journey Section */}
         <p className="text-lg px-15 leading-relaxed mb-6">
-          "AGGARWAL PUBLICITY AND MARKETING PVT. LTD. (since 1994) is one of India's leading Importer, Exporter, Distributors and wholesaler of Industrial Chemical Products. APM is a Private Limited company located at Delhi, India. The company founded by Anil Aggarwal (Garg) having experience in the field of chemical trading and Marketing. We are importing various chemicals like Hexamine (Sinachem, Iran), Sodium Hydro Sulphate, Titanium Di Oxide, Paraformaldehyde, Phthalic, Tech. Grade Urea, etc. from various countries."
+         &quot; AGGARWAL PUBLICITY AND MARKETING PVT. LTD. (since 1994) is one of India &quot;s leading Importer, Exporter, Distributors and wholesaler of Industrial Chemical Products. APM is a Private Limited company located at Delhi, India. The company founded by Anil Aggarwal (Garg) having experience in the field of chemical trading and Marketing. We are importing various chemicals like Hexamine (Sinachem, Iran), Sodium Hydro Sulphate, Titanium Di Oxide, Paraformaldehyde, Phthalic, Tech. Grade Urea, etc. from various countries.&quot;
         </p>
 <div> <Director/></div>
        

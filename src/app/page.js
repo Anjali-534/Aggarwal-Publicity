@@ -211,7 +211,14 @@ function HeroSection() {
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-6">
       {brands.map((brand, index) => (
         <div key={index} className="flex items-center justify-center p-4 bg-amber-200 shadow rounded-lg">
-          <img src={brand.image} alt={brand.name} className="object-contain w-full h-auto" />
+          <Image
+            src={brand.image}
+            alt={brand.name}
+            width={120}
+            height={120}
+            className="object-contain w-full h-auto"
+            priority
+          />
         </div>
       ))}
     </div>
@@ -293,10 +300,13 @@ function SustainabilitySection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4 + index * 0.2 }}
               >
-                <img
+                <Image
                   src={item.src}
                   alt={item.title}
+                  width={600}
+                  height={256}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-all duration-300"
+                  priority
                 />
                 <div
                   className={`absolute bottom-4 left-4 ${item.bg} text-white p-6 rounded-lg transform group-hover:scale-105 transition-all duration-300`}
@@ -347,10 +357,13 @@ function Director() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <img
+        <Image
           src="/director.jpg"
           alt="director"
+          width={400}
+          height={400}
           className="w-full max-w-sm rounded-lg shadow-lg"
+          priority
         />
       </motion.div>
     </motion.section>
