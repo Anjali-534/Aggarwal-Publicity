@@ -1,0 +1,16 @@
+{
+  "name": "Aggarwal Publicity & Marketing Pvt. Ltd.",
+  "short_name": "Aggarwal Publicity",
+  "description": "Leading industrial chemical distributor since 1994",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}

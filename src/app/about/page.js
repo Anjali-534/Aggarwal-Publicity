@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
 import Director from '../Components/Director';
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+import { generateStructuredData } from "@/lib/utils";
 
+export const metadata = generateSEOMetadata({
+  title: "About Us - Aggarwal Publicity & Marketing | Industrial Chemical Leaders",
+  description: "Learn about our 30+ year journey in industrial chemicals. Founded by Anil Aggarwal in 1994, we've become India's trusted chemical distributor and exporter.",
+  keywords: ["about aggarwal publicity", "chemical company history", "anil aggarwal", "industrial chemical distributor", "company profile"]
+});
 export default function AboutPage() {
   // Awards data
   const awards = [
@@ -49,8 +56,26 @@ export default function AboutPage() {
     },
   ];
 
+  const aboutSchema = generateStructuredData("AboutPage", {
+    name: "About Aggarwal Publicity & Marketing Pvt. Ltd.",
+    description: "Learn about our journey since 1994 as India's leading industrial chemical distributor",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Aggarwal Publicity & Marketing Pvt. Ltd.",
+      foundingDate: "1994",
+      founder: {
+        "@type": "Person",
+        name: "Anil Aggarwal"
+      }
+    }
+  });
   return (
-    < div className="py-20  mt-8  text-gray-700">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: aboutSchema }}
+      />
+      <div className="py-20 mt-8 text-gray-700">
       <div className="mx-auto">
         {/* Title Section */}
         <h1 className="text-4xl px-15 font-bold text-blue-900 mb-6">Our Journey</h1>
@@ -121,6 +146,7 @@ export default function AboutPage() {
 
 
       </div>
-    </div>
+      </div>
+    </>
   );
 }

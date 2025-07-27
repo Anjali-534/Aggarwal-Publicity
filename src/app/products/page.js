@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+import { generateStructuredData } from "@/lib/utils";
 
+export const metadata = generateSEOMetadata({
+  title: "Industrial Chemical Products - Paraformaldehyde, Phthalic Anhydride & More",
+  description: "Explore our comprehensive range of industrial chemicals including Paraformaldehyde, Phthalic Anhydride, solvents, and specialty chemicals. Quality guaranteed.",
+  keywords: ["industrial chemicals", "paraformaldehyde powder", "phthalic anhydride", "chemical products", "industrial solvents", "acetone", "benzene"]
+});
 const products = [
   {
     id: 1,
@@ -103,8 +110,34 @@ const products = [
 ];
 
 export default function ProductSection() {
+  const productSchema = generateStructuredData("ItemList", {
+    name: "Industrial Chemical Products",
+    description: "Comprehensive range of industrial chemicals and solvents",
+    numberOfItems: products.length,
+    itemListElement: products.map((product, index) => ({
+      "@type": "Product",
+      position: index + 1,
+      name: product.name,
+      description: product.description,
+      image: `https://aggarwalpublicity.com${product.image}`,
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: "Aggarwal Publicity & Marketing Pvt. Ltd."
+        }
+      }
+    }))
+  });
+
   return (
-    <section className="container mx-auto px-6 py-45">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: productSchema }}
+      />
+      <section className="container mx-auto px-6 py-45">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
         Our Products
       </h2>
@@ -139,6 +172,7 @@ export default function ProductSection() {
           </div>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   );
 }
