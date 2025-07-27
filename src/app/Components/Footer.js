@@ -32,27 +32,7 @@ export default function Footer() {
             <p className="text-gray-600 mt-2">Fill out the form, and we’ll get back to you soon.</p>
 
             <form className="mt-4 space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <textarea
-                rows="3"
-                placeholder="Your Message"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-blue-800 transition"
-              >
-                Send Message
-              </button>
+              <ContactForm />
             </form>
           </div>
         </div>
@@ -79,11 +59,16 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="bg-gray-100 py-4 text-sm text-center text-gray-600">
-        <p>© 2025 Aggarwal Publicity and Marketing Pvt Ltd. All rights reserved.</p>
+        <p>© 2025 Aggarwal Publicity and Marketing Pvt Ltd. All rights reserved. | 
+          <a href="/sitemap.xml" className="hover:text-blue-600 ml-1">Sitemap</a>
+        </p>
       </div>
     </footer>
   );
 }
+
+// Import ContactForm at the top
+import { ContactForm } from '@/components/contact-form';
 
 // Reusable Footer Column Component
 const FooterColumn = ({ title, links }) => (

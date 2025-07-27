@@ -9,7 +9,14 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import React from "react";
 
 import { motion } from "framer-motion";
+import { generateStructuredData } from "@/lib/utils";
+import { generateMetadata } from "@/lib/seo";
 
+export const metadata = generateMetadata({
+  title: "Aggarwal Publicity & Marketing Pvt. Ltd. - Industrial Chemical Suppliers",
+  description: "Leading industrial chemical distributor since 1994. Specializing in Paraformaldehyde, Phthalic Anhydride, and premium chemicals. Import, Export & Wholesale services across India.",
+  keywords: ["industrial chemicals", "chemical distributor", "paraformaldehyde", "phthalic anhydride", "chemical supplier Delhi"]
+});
 
 // Banner images
 const bannerImages = [
@@ -359,14 +366,46 @@ function Director() {
 
 // Adding this section below HeroSection
 export default function HomePage() {
+  const organizationSchema = generateStructuredData("Organization", {
+    name: "Aggarwal Publicity & Marketing Pvt. Ltd.",
+    description: "Leading Importer, Exporter, Distributors and Wholesaler of Industrial Chemical Products since 1994",
+    url: "https://aggarwalpublicity.com",
+    logo: "https://aggarwalpublicity.com/logo.jpg",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-98101-52290",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"]
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "8145/2, Street No: 7, Near Hotel White House, Multani Dhanda, Paharganj",
+      addressLocality: "New Delhi",
+      postalCode: "110055",
+      addressCountry: "IN"
+    },
+    foundingDate: "1994",
+    founder: {
+      "@type": "Person",
+      name: "Anil Aggarwal"
+    }
+  });
+
   return (
-    <div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: organizationSchema }}
+      />
+      <div>
       <BannerSection />
       <AboutSection />
       <HeroSection />
       <SustainabilitySection />
       <Director />
-    </div>
+      </div>
+    </>
   );
 }
 
