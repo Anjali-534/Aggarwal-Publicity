@@ -49,7 +49,7 @@ export default function Footer() {
           <strong>Registered Address:<br />
             </strong>  8145/2, Street No: 7,Near Hotel White House, <br/>Multani Dhanda, Paharganj <br/> New Delhi-110055 (India) <br/><br/> <strong>Phone:</strong> 9810152290 / 8860041466<br/> <strong>Email:</strong>aggarwalpublicity@gmail.com
           <br /><br />
-          <strong>Warehouse Address:</strong><br/> 15/5, Street No.12 <br/>Swaroop Nagar, Delhi-110042     <br /><br />
+          <strong>Warehouse Address:</strong><br/> Khasra No.15/5, Street No.12 <br/>Swaroop Nagar, Delhi-110042     <br /><br />
         
         </p>
       </div>
