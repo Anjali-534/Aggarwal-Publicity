@@ -170,7 +170,7 @@ export default function ProductSection() {
                 Know More
               </Link> 
               <Link
-                href={product.link}
+                href="/contact"
                 className="mt-4 inline-block bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-all"
               >
                Query
