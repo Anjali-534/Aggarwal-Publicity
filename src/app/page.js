@@ -12,11 +12,6 @@ import { motion } from "framer-motion";
 import { generateStructuredData } from "@/lib/utils";
 import { generateMetadata } from "@/lib/seo";
 
-export const metadata = generateMetadata({
-  title: "Aggarwal Publicity & Marketing Pvt. Ltd. - Industrial Chemical Suppliers",
-  description: "Leading industrial chemical distributor since 1994. Specializing in Paraformaldehyde, Phthalic Anhydride, and premium chemicals. Import, Export & Wholesale services across India.",
-  keywords: ["industrial chemicals", "chemical distributor", "paraformaldehyde", "phthalic anhydride", "chemical supplier Delhi"]
-});
 
 // Banner images
 const bannerImages = [
@@ -199,6 +194,146 @@ function AboutSection() {
   );
 }
 
+
+ function ChemicalStatsSection() {
+  return (
+    <section className="bg-white py-16 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center">
+          {/* Formaldehyde */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/icons/formaldehyde.png" // Replace with your icon path
+              alt="Formaldehyde"
+              width={60}
+              height={60}
+              className="mb-4"
+            />
+            <h3 className="text-xl font-bold text-gray-900">37–43% Formaldehyde</h3>
+            <p className="mt-2 text-lg">
+              <span className="text-orange-600 font-semibold">4.25</span> L
+            </p>
+          </div>
+
+          {/* Paraformaldehyde */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/icons/paraformaldehyde.png" // Replace with your icon path
+              alt="Paraformaldehyde"
+              width={60}
+              height={60}
+              className="mb-4"
+            />
+            <h3 className="text-xl font-bold text-gray-900">91–96% Paraformaldehyde</h3>
+            <p className="mt-2 text-lg">
+              <span className="text-orange-600 font-semibold">30,000</span> MTPA
+            </p>
+          </div>
+
+          {/* Urea Formaldehyde Concentrate */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/icons/urea.png" // Replace with your icon path
+              alt="Urea Formaldehyde"
+              width={60}
+              height={60}
+              className="mb-4"
+            />
+            <h3 className="text-xl font-bold text-gray-900 text-center">
+              85% Urea Formaldehyde<br />Concentrate
+            </h3>
+            <p className="mt-2 text-lg">
+              <span className="text-orange-600 font-semibold">60,000</span> MTPA
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+function FormaldehydeSection() {
+  return (
+    <section className="bg-white py-8 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
+        {/* Left Content */}
+        <div className="md:w-1/2">
+          <h2 className="text-6xl font-extrabold text-gray-900 leading-tight">
+            Our <br className="hidden sm:block" />
+            <span className="text-black">Specialities</span>
+          </h2>
+          <h3 className="text-2xl font-bold text-gray-800 mt-4">Formaldehyde</h3>
+
+          <p className="mt-4 text-gray-600 text-base leading-relaxed max-w-xl">
+            Formaldehyde has a variety of derivatives that find applications in the chemical
+            industry and also in the production of textile binders and paints. Its versatility,
+            excellent binding grip and preservative properties have made it popular in the
+            paper and laminates market.
+          </p>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 border-t pt-6 border-gray-200">
+            {/* Packaging Options */}
+            {[
+              { icon: "/carboy.png", label: "20 / 35 & 50 Kgs. Carboys" },
+              { icon: "/barrel.png", label: "250 Kgs. Barrel" },
+              { icon: "/ibc.jpg", label: "500 / 1000 Kgs. IBC Container" },
+              { icon: "/iso.jpg", label: "SS Tanks & ISO Container" },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center space-x-3">
+                <Image src={item.icon} alt={item.label} width={32} height={32} />
+                <p className="text-gray-800 text-sm">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="md:w-1/2 flex justify-center">
+          <div className="bg-blue-50 p-4 rounded-lg shadow-md">
+            <Image
+              src="/para.jpg" // Your actual image
+              alt="Formaldehyde packaging"
+              width={450}
+              height={550}
+              className="object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CertificationsSection() {
+  return (
+    <section className="bg-white py-12">
+      <div className="container mx-auto px-6">
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
+          Our Certifications
+        </h2>
+
+        <div className="flex flex-wrap justify-center items-center gap-10">
+          {/* Images stored in /public/certifications/*.png */}
+          {[
+            "/certifications/iso-9001.png",
+            "/certifications/iso-45001.png",
+            "/certifications/iso-14001.png",
+            "/certifications/responsible-care.png",
+          ].map((src, idx) => (
+            <div key={idx} className="relative w-32 h-32 md:w-40 md:h-40">
+              <Image
+                src={src}
+                alt={`Certification ${idx + 1}`}
+                layout="fill"
+                objectFit="contain"
+                className="grayscale hover:grayscale-0 transition duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 // Hero Section
 function HeroSection() {
   return (
@@ -414,6 +549,10 @@ export default function HomePage() {
       <div>
       <BannerSection />
       <AboutSection />
+      <ChemicalStatsSection />
+      <FormaldehydeSection />
+      {/* <br/>
+      <CertificationsSection /> */}
       <HeroSection />
       <SustainabilitySection />
       <Director />

@@ -1,87 +1,172 @@
-"use client"; // Required for Next.js App Router (Next.js 13+)
+"use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import React from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
+import { ContactForm } from "@/components/contact-form";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 w-full text-gray-400 py-10">
-      <div className="container mx-auto px-6">
+    <footer className="bg-gray-100 text-gray-700 w-full pt-12">
+      <div className="max-full mx-8 md:px-8 sm:px-6 lg:px-2">
+        {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Left Section - Logo, Links, and Socials */}
+          {/* Logo + Social */}
           <div>
-            <Image src="/logo.jpg" alt="Logo"  width={70} height={70} className="w-32 rounded-full flex items-center justify-center" />
-            <p className="mt-4 text-gray-500">Got questions? Just ask.</p>
-            
-           
-
-            {/* Social Media Icons */}
+            <div className="flex items-center space-x-4">
+              <Image
+                src="/logo.jpg"
+                alt="Logo"
+                width={70}
+                height={70}
+                className="rounded-full p-1 bg-white shadow-md"
+              />
+              <h2 className="text-lg sm:text-xl font-bold text-gray-800">
+                Aggarwal Publicity & Marketing Pvt. Ltd.
+              </h2>
+            </div>
+            <p className=" max-w-sm  mx-10 md:px-8  lg:px-2 text-sm text-gray-500">
+              Got questions? Just ask. We’re here to help.
+            </p>
             <div className="flex space-x-4 mt-6">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube].map((Icon, index) => (
-                <a key={index} href="#" className="text-[#2B3380]">
+              {[
+                {
+                  href: "https://www.facebook.com/aggarwalpublicity/",
+                  Icon: FaFacebookF,
+                  label: "Facebook",
+                },
+                {
+                  href: "https://twitter.com/aggarwalpublicity",
+                  Icon: FaTwitter,
+                  label: "Twitter",
+                },
+                {
+                  href: "https://www.instagram.com/aggarwalpublicity",
+                  Icon: FaInstagram,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://www.linkedin.com/company/aggarwalpublicity",
+                  Icon: FaLinkedinIn,
+                  label: "LinkedIn",
+                },
+                {
+                  href: "https://www.youtube.com/@aggarwalpublicity",
+                  Icon: FaYoutube,
+                  label: "YouTube",
+                },
+              ].map(({ href, Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="text-gray-500 hover:text-[#2B3380] transition"
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Icon size={20} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Right Section - Chat With Us Form */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          {/* Contact Form */}
+          <div className="bg-white p-6 rounded-xl shadow-md">
             <h3 className="text-xl font-bold text-gray-800">Chat With Us</h3>
-            <p className="text-gray-600 mt-2">Fill out the form, and we’ll get back to you soon.</p>
-
-            <form className="mt-4 space-y-4">
+            <p className="text-sm text-gray-500 mt-1">
+              Fill out the form, and we’ll get back to you soon.
+            </p>
+            <div className="mt-4">
               <ContactForm />
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-300 my-6"></div>
-      <h1 className="text-center text-2xl font-bold text-gray-800">Aggarwal Publicity & Marketing Pvt. Ltd.</h1>
+        {/* Divider */}
+        <div className="border-t border-gray-300 my-10"></div>
 
-      {/* Address Section */}
-      <div className="container mx-auto px-6 text-sm text-gray-600">
-        <br/>
-        <p>
-          <strong>Registered Address:<br />
-            </strong>  8145/2, Street No: 7,Near Hotel White House, <br/>Multani Dhanda, Paharganj <br/> New Delhi-110055 (India) <br/><br/> <strong>Phone:</strong> 9810152290 / 8860041466<br/> <strong>Email:</strong>aggarwalpublicity@gmail.com
-          <br /><br />
-          <strong>Warehouse Address:</strong><br/> Khasra No.15/5, Street No.12 <br/>Swaroop Nagar, Delhi-110042     <br /><br />
-        
-        </p>
-      </div>
+        {/* Address Section with Maps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Registered Office */}
+          <div>
+            <p className="leading-relaxed text-sm sm:text-base">
+              <strong>Registered Address:</strong><br />
+              8145/2, Street No: 7, Near Hotel White House,<br />
+              Multani Dhanda, Paharganj,<br />
+              New Delhi-110055 (India)
+            </p>
+            <div className="mt-4 rounded-lg overflow-hidden shadow">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.716451005037!2d77.20622631508328!3d28.64115608241443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1659781234567!5m2!1sen!2sin"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Registered Office Map"
+              ></iframe>
+            </div>
+          </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-300 my-6"></div>
+          {/* Warehouse */}
+          <div>
+            <p className="leading-relaxed text-sm sm:text-base">
+              <strong>Warehouse Address:</strong><br />
+              Khasra No.15/5, Street No.12,<br />
+              Swaroop Nagar, Delhi-110042
+            </p>
+            <br />
+            <div className="mt-4 rounded-lg overflow-hidden shadow">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.123456789012!2d77.12345678901234!3d28.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI0LjQiTiA3N8KwMDcnNDEuOCJF!5e0!3m2!1sen!2sin!4v1659781234567!5m2!1sen!2sin"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Warehouse Location Map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
 
-      {/* Bottom Section */}
-      <div className="bg-gray-100 py-4 text-sm text-center text-gray-600">
-        <p>© 2025 Aggarwal Publicity and Marketing Pvt Ltd. All rights reserved. | 
-          <a href="/sitemap.xml" className="hover:text-blue-600 ml-1">Sitemap</a>
-        </p>
+        {/* Contact Details */}
+        <div className="mt-8 leading-relaxed text-sm sm:text-base">
+          <strong>Phone:</strong> 9810152290 / 8860041466<br />
+          <strong>Email:</strong>{" "}
+          <a
+            href="mailto:aggarwalpublicity@gmail.com"
+            className="text-blue-600 hover:underline"
+          >
+            aggarwalpublicity@gmail.com
+          </a>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-300 my-10"></div>
+
+        {/* Bottom Footer */}
+        <div className="text-center text-xs text-gray-500 pb-6">
+          <p>
+            © 2025 Aggarwal Publicity and Marketing Pvt Ltd. All rights
+            reserved. |
+            <a
+              href="/sitemap.xml"
+              className="text-blue-600 hover:underline ml-1"
+            >
+              Sitemap
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
 }
-
-// Import ContactForm at the top
-import { ContactForm } from '@/components/contact-form';
-
-// Reusable Footer Column Component
-const FooterColumn = ({ title, links }) => (
-  <div className="flex flex-col space-y-3">
-    <h3 className="font-semibold text-black">{title}</h3>
-    <ul className="space-y-1">
-      {links.map((link, index) => (
-        <li key={index}>
-          <a href="#" className="hover:text-blue-700">
-            {link}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);

@@ -17,9 +17,8 @@ export default function Header() {
         <div className="flex items-center ml-4 space-x-4">
           <Link href="/" className="flex items-center space-x-4">
             {/* Logo */}
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-              <Image src="/logo.jpg" alt="Logo" className="h-10" 
-               />
+            <div className="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center">
+              <Image src="/logo.jpg" alt="Logo" className="h-10" width={40} height={40} />
             </div>
 
             {/* Company Info */}
@@ -39,7 +38,7 @@ export default function Header() {
           href="tel:+9810152290"
           className="flex items-center space-x-2 px-4 py-2 rounded-full text-blue-900 font-semibold mr-6"
         >
-          <Image src="/call.png" alt="Call" width={20} height={20} className="rounded-full" />
+          <Image src="/call.png" alt="Call" width={20} height={20} className="rounded-full shadow-md" />
           <span className="text-sm">+91 98101 52290</span>
         </a>
       </div>

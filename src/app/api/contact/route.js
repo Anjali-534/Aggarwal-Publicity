@@ -1,43 +1,69 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-export async function POST(request) {
+// Validation helper
+function validateFields({ name, email, message }) {
+  if (!name || !email || !message) {
+    return 'All fields are required.';
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return 'Invalid email address.';
+  }
+  return null;
+}
+
+// Sanitize message to prevent HTML injection
+function sanitize(input) {
+  return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+export async function POST(req) {
   try {
-    const body = await request.json();
-    const { name, email, phone, message } = body;
+    const body = await req.json();
+    console.log('📨 Incoming Form Submission:', body);
 
-    // Basic validation
-    if (!name || !email || !phone || !message) {
-      return NextResponse.json(
-        { error: 'All fields are required' },
-        { status: 400 }
-      );
+    // 1. ✅ Validate
+    const validationError = validateFields(body);
+    if (validationError) {
+      return NextResponse.json({ success: false, error: validationError }, { status: 400 });
     }
 
-    // Here you would typically:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Integrate with CRM
-    
-    // For now, we'll just log the data
-    console.log('Contact form submission:', {
-      name,
-      email,
-      phone,
-      message,
-      timestamp: new Date().toISOString(),
+    const { name, email, message } = body;
+
+    // 2. ✉️ Setup transporter
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
     });
 
-    // Simulate processing time
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // 3. 🧪 Verify SMTP
+    await transporter.verify();
+    console.log('✅ SMTP transporter is ready');
 
-    return NextResponse.json(
-      { message: 'Contact form submitted successfully' },
-      { status: 200 }
-    );
+    // 4. 📤 Send email
+    await transporter.sendMail({
+      from: `"${name}" <${email}>`,
+      to: process.env.SMTP_USER,
+      subject: 'New Contact Form Submission',
+      text: message,
+      html: `
+        <h2>Contact Form</h2>
+        <p><strong>Name:</strong> ${sanitize(name)}</p>
+        <p><strong>Email:</strong> ${sanitize(email)}</p>
+        <p><strong>Message:</strong><br/>${sanitize(message)}</p>
+      `,
+    });
+
+    console.log('✅ Email sent successfully');
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('❌ Error in /api/contact:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { success: false, error: error.message },
       { status: 500 }
     );
   }

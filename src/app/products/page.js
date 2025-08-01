@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -162,12 +162,20 @@ export default function ProductSection() {
                 {product.name}
               </h3>
               <p className="text-gray-600 text-sm mt-2">{product.description}</p>
+              <div className="flex justify-between gap-2 mt-auto">
               <Link
                 href={product.link}
                 className="mt-4 inline-block bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-all"
               >
                 Know More
+              </Link> 
+              <Link
+                href={product.link}
+                className="mt-4 inline-block bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-all"
+              >
+               Query
               </Link>
+              </div>
             </div>
           </div>
         ))}
