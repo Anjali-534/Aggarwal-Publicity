@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 import Director from '../Components/Director';
+import  {IndustriesSection }from '../Components/Industries';
+
 
 export default function AboutPage() {
   // Awards data
@@ -87,6 +89,7 @@ export default function AboutPage() {
     ))}
   </div>
 </div>
+<IndustriesSection />
 <section className="relative py-16 px-4 md:px-12 lg:px-24 overflow-hidden">
   {/* Background Image Layer with Grayscale */}
   <div
