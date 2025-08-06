@@ -137,7 +137,7 @@ export default function ProductSection() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: productSchema }}
       />
-      <section className="container mx-auto px-6 py-45">
+      <section className="container mx-auto px-6 py-20">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
         Our Products
       </h2>

@@ -1,4 +1,5 @@
 "use client";
+import { FiPhone, FiMail,FiMapPin } from "react-icons/fi";
 
 import Image from "next/image";
 import React from "react";
@@ -96,7 +97,8 @@ export default function Footer() {
           {/* Registered Office */}
           <div>
             <p className="leading-relaxed text-sm sm:text-base">
-              <strong>Registered Address:</strong><br />
+              <FiMapPin className="text-blue-600 flex inline" />
+              <strong> Registered Address:</strong><br />
               8145/2, Street No: 7, Near Hotel White House,<br />
               Multani Dhanda, Paharganj,<br />
               New Delhi-110055 (India)
@@ -118,7 +120,8 @@ export default function Footer() {
           {/* Warehouse */}
           <div>
             <p className="leading-relaxed text-sm sm:text-base">
-              <strong>Warehouse Address:</strong><br />
+              <FiMapPin className="text-blue-600 flex inline" />
+              <strong> Warehouse Address:</strong><br />
               Khasra No.15/5, Street No.12,<br />
               Swaroop Nagar, Delhi-110042
             </p>
@@ -140,15 +143,21 @@ export default function Footer() {
 
         {/* Contact Details */}
         <div className="mt-8 leading-relaxed text-sm sm:text-base">
-          <strong>Phone:</strong> 9810152290 / 8860041466<br />
-          <strong>Email:</strong>{" "}
-          <a
-            href="mailto:aggarwalpublicity@gmail.com"
-            className="text-blue-600 hover:underline"
-          >
-            aggarwalpublicity@gmail.com
-          </a>
-        </div>
+  <div className="flex items-center gap-2">
+    <FiPhone className="text-blue-600" />
+    <strong>Phone:</strong> 9810152290 / 8860041466
+  </div>
+  <div className="flex items-center gap-2 mt-2">
+    <FiMail className="text-blue-600" />
+    <strong>Email:</strong>{" "}
+    <a
+      href="mailto:aggarwalpublicity@gmail.com"
+      className="text-blue-600 hover:underline"
+    >
+      aggarwalpublicity@gmail.com
+    </a>
+  </div>
+</div>
 
         {/* Divider */}
         <div className="border-t border-gray-300 my-10"></div>

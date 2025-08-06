@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       >
         <Header/>
         <Sub_nav/>
-        <div className="pt-[85px] md:pt-[50px]"/>
+        <div className=" md:pt-[90px]"/>
         {children}
         <Footer/>
       </body>

@@ -1,5 +1,5 @@
 "use client";
-
+import { FiPhone } from "react-icons/fi";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,6 +41,7 @@ export default function Header() {
           <Image src="/call.png" alt="Call" width={20} height={20} className="rounded-full shadow-md" />
           <span className="text-sm">+91 98101 52290</span>
         </a>
+        
       </div>
 
       {/* Mobile Header */}
@@ -57,12 +58,24 @@ export default function Header() {
                 className="w-9 h-9 rounded-full object-cover"
                 priority
               />
+              <div className="flex flex-col space-y-1">
               <h1 className="text-sm font-bold text-red-800 leading-tight">
                 Aggarwal Publicity & Marketing Pvt. Ltd.
               </h1>
+              <h6 className="text-[8px] text-white font-semibold max-w-[480px] leading-tight">
+                Importer, Exporter, Distributors and Wholesaler of Industrial Chemical Products
+              </h6>
             </div>
+            </div>
+            
           </Link>
         </div>
+        <a
+          href="tel:+9810152290"
+          className="flex items-center"
+        >
+          <FiPhone className="text-blue-600" />
+        </a>
       </div>
 
       {/* Mobile Navigation Links */}
