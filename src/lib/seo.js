@@ -1,17 +1,18 @@
 export const siteConfig = {
   name: "Aggarwal Publicity & Marketing Pvt. Ltd.",
-  description: "Leading Importer, Exporter, Distributors and Wholesaler of Industrial Chemical Products since 1994. Specializing in Paraformaldehyde, Phthalic Anhydride, and premium industrial chemicals.",
+  description:
+    "Leading Importer, Exporter, Distributor and Wholesaler of Industrial Chemical Products since 1994. Trusted specialists in Paraformaldehyde and Phthalic Anhydride.",
   url: "https://aggarwalpublicity.com",
   ogImage: "/og-image.jpg",
   keywords: [
-    "industrial chemicals",
-    "chemical distributor",
-    "paraformaldehyde",
-    "phthalic anhydride",
-    "chemical importer",
-    "chemical exporter",
-    "Delhi chemicals",
-    "industrial chemical supplier"
+    "paraformaldehyde supplier",
+    "phthalic anhydride distributor",
+    "industrial chemical importer India",
+    "chemical exporter Delhi",
+    "chemical wholesaler",
+    "Aggarwal Publicity chemicals",
+    "industrial chemicals India",
+    "chemical distribution company"
   ],
   author: "Aggarwal Publicity & Marketing Pvt. Ltd.",
   creator: "Anil Aggarwal",
@@ -25,7 +26,7 @@ export const siteConfig = {
 
 export function generateMetadata(page = {}) {
   const {
-    title = siteConfig.name,
+    title = `${siteConfig.name} | Industrial Chemicals Supplier`,
     description = siteConfig.description,
     keywords = siteConfig.keywords,
     canonical,

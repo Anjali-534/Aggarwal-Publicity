@@ -30,11 +30,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        <Sub_nav/>
-        <div className=" md:pt-[90px]"/>
+        <Header />
+        <Sub_nav />
+        <div className="md:pt-[90px]" />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

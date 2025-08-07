@@ -1,103 +1,144 @@
-// app/contact/page.js
-import { ContactForm } from '@/components/contact-form';
+'use client';
+
+import { ContactForm } from "@/components/contact-form";
+import React from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 export default function ContactPage() {
-  const contactInfo = {
-    office: `8145/2, Street No: 7, Near Hotel White House,\nMultani Dhanda, Paharganj\nNew Delhi-110055, India`,
-    phone1: '+91 98101 52290',
-    phone2: '+91 88600 41466',
-    email: 'aggarwalpublicity@gmail.com',
-    warehouse: '15/5, Street No.12\nSwaroop Nagar, Delhi-110042',
-    hours: [
-      'Monday - Friday: 9:00 AM - 6:00 PM',
-      'Saturday: 9:00 AM - 2:00 PM',
-      'Sunday: Closed',
-    ]
-  };
+  const contactInfo = [
+    {
+      title: "Address",
+      icon: "📍",
+      content: `8145/2, Street No: 7, Near Hotel White House,\nMultani Dhanda, Paharganj\nNew Delhi-110055, India`,
+    },
+    {
+      title: "Phone",
+      icon: "📞",
+      content: (
+        <>
+          <a href="tel:+919810152290" className="text-red-600 hover:underline">+91 98101 52290</a><br />
+          <a href="tel:+918860041466" className="text-red-600 hover:underline">+91 88600 41466</a>
+        </>
+      ),
+    },
+    {
+      title: "Email",
+      icon: "✉️",
+      content: (
+        <>
+          <a href="mailto:aggarwalpublicity@gmail.com" className="text-red-600 hover:underline">aggarwalpublicity@gmail.com</a>
+        </>
+      ),
+    },
+    {
+      title: "Warehouse",
+      icon: "🏭",
+      content: `15/5, Street No.12\nSwaroop Nagar, Delhi-110042`,
+    },
+    {
+      title: "Business Hours",
+      icon: "⏰",
+      content: (
+        <>
+          <p>Mon - Sat: 10:00 AM - 6:00 PM</p>
+          <p>Sunday: Closed</p>
+        </>
+      ),
+    },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://www.facebook.com/aggarwalpublicity/",
+      Icon: FaFacebookF,
+      label: "Facebook",
+    },
+    {
+      href: "https://twitter.com/aggarwalpublicity",
+      Icon: FaTwitter,
+      label: "Twitter",
+    },
+    {
+      href: "https://www.instagram.com/aggarwalpublicity",
+      Icon: FaInstagram,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.linkedin.com/company/aggarwalpublicity",
+      Icon: FaLinkedinIn,
+      label: "LinkedIn",
+    },
+    {
+      href: "https://www.youtube.com/@aggarwalpublicity",
+      Icon: FaYoutube,
+      label: "YouTube",
+    },
+  ];
 
   return (
-    <div className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:mt-5 font-bold text-gray-800 mb-4">Contact Us</h1>
-          <p className="text-lg text-gray-600">
-            Get in touch with us for all your industrial chemical requirements
+    <div className="bg-white">
+      {/* 🟦 Top Banner Section */}
+      <div
+        className="w-full h-75 bg-cover bg-center flex flex-col justify-center items-center text-white text-center"
+        style={{ backgroundImage: "url('/contact_banner.png')" }}
+      >
+        <div className="px-4 py-8 rounded">
+          <h1 className="text-6xl text-gray-700 font-bold mb-2">Contact Us</h1>
+          <p className="text-lg text-gray-700">
+            We&apos;d love to hear from you — reach out to our expert team
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6">Get in Touch</h2>
-              <div className="space-y-4">
-                {/* Office */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-xs">📍</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Registered Office</h3>
-                    <p className="text-gray-600 whitespace-pre-line">{contactInfo.office}</p>
-                  </div>
+      {/* 🟩 Contact Info + Form Section */}
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          {/* Contact Info Cards */}
+          <div className="space-y-6">
+            {contactInfo.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-4 p-5 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-lg transition"
+              >
+                <div className="w-10 h-10 bg-blue-100 text-white text-xl rounded-full flex items-center justify-center">
+                  {item.icon}
                 </div>
-                {/* Phone */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-xs">📞</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Phone</h3>
-                    <p className="text-gray-600">
-                      <a href={`tel:${contactInfo.phone1.replace(/\s/g, '')}`} className="hover:text-blue-600">
-                        {contactInfo.phone1}
-                      </a>{" / "}
-                      <a href={`tel:${contactInfo.phone2.replace(/\s/g, '')}`} className="hover:text-blue-600">
-                        {contactInfo.phone2}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                {/* Email */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-xs">✉️</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">
-                      <a href={`mailto:${contactInfo.email}`} className="hover:text-blue-600">
-                        {contactInfo.email}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                {/* Warehouse */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-xs">🏭</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Warehouse</h3>
-                    <p className="text-gray-600 whitespace-pre-line">{contactInfo.warehouse}</p>
-                  </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">{item.title}</h3>
+                  <div className="text-gray-600 whitespace-pre-line text-sm mt-1">{item.content}</div>
                 </div>
               </div>
-            </div>
+            ))}
 
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Business Hours</h3>
-              <div className="space-y-2 text-gray-600">
-                {contactInfo.hours.map((line, idx) => (
-                  <p key={idx}>{line}</p>
+            {/* Social Links Section */}
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Follow Us</h3>
+              <div className="flex space-x-4">
+                {socialLinks.map(({ href, Icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    className="text-gray-500 hover:text-[#2B3380] transition transform hover:scale-110"
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon size={22} />
+                  </a>
                 ))}
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h2>
+          <div className="bg-gray-50 h-full md:h-[60%] p-8 rounded-lg shadow-md">
             <ContactForm />
           </div>
         </div>

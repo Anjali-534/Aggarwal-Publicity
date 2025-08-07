@@ -2,25 +2,19 @@
 import { FiPhone, FiMail,FiMapPin } from "react-icons/fi";
 
 import Image from "next/image";
-import React from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaYoutube,
-} from "react-icons/fa";
-import { ContactForm } from "@/components/contact-form";
+
+
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-700 w-full pt-12">
+   <footer className="bg-gray-100 text-gray-700 w-full pt-12">
+
       <div className="max-full mx-8 md:px-8 sm:px-6 lg:px-2">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Logo + Social */}
           <div>
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <Image
                 src="/logo.jpg"
                 alt="Logo"
@@ -31,72 +25,19 @@ export default function Footer() {
               <h2 className="text-lg sm:text-xl font-bold text-gray-800">
                 Aggarwal Publicity & Marketing Pvt. Ltd.
               </h2>
-            </div>
-            <p className=" max-w-sm  mx-10 md:px-8  lg:px-2 text-sm text-gray-500">
-              Got questions? Just ask. We’re here to help.
-            </p>
-            <div className="flex space-x-4 mt-6">
-              {[
-                {
-                  href: "https://www.facebook.com/aggarwalpublicity/",
-                  Icon: FaFacebookF,
-                  label: "Facebook",
-                },
-                {
-                  href: "https://twitter.com/aggarwalpublicity",
-                  Icon: FaTwitter,
-                  label: "Twitter",
-                },
-                {
-                  href: "https://www.instagram.com/aggarwalpublicity",
-                  Icon: FaInstagram,
-                  label: "Instagram",
-                },
-                {
-                  href: "https://www.linkedin.com/company/aggarwalpublicity",
-                  Icon: FaLinkedinIn,
-                  label: "LinkedIn",
-                },
-                {
-                  href: "https://www.youtube.com/@aggarwalpublicity",
-                  Icon: FaYoutube,
-                  label: "YouTube",
-                },
-              ].map(({ href, Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="text-gray-500 hover:text-[#2B3380] transition"
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon size={20} />
-                </a>
-              ))}
-            </div>
+            </div> */}
+            
+            
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-800">Chat With Us</h3>
-            <p className="text-sm text-gray-500 mt-1">
-              Fill out the form, and we’ll get back to you soon.
-            </p>
-            <div className="mt-4">
-              <ContactForm />
-            </div>
-          </div>
+      
+          
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-gray-300 my-10"></div>
-
         {/* Address Section with Maps */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Registered Office */}
           <div>
-            <p className="leading-relaxed text-sm sm:text-base">
+            <p className="leading-relaxed text-sm text-gray-700 sm:text-base">
               <FiMapPin className="text-blue-600 flex inline" />
               <strong> Registered Address:</strong><br />
               8145/2, Street No: 7, Near Hotel White House,<br />
@@ -119,7 +60,7 @@ export default function Footer() {
 
           {/* Warehouse */}
           <div>
-            <p className="leading-relaxed text-sm sm:text-base">
+            <p className="leading-relaxed text-gray-700  text-sm sm:text-base">
               <FiMapPin className="text-blue-600 flex inline" />
               <strong> Warehouse Address:</strong><br />
               Khasra No.15/5, Street No.12,<br />
@@ -142,7 +83,7 @@ export default function Footer() {
         </div>
 
         {/* Contact Details */}
-        <div className="mt-8 leading-relaxed text-sm sm:text-base">
+        <div className="mt-8 leading-relaxed text-sm text-gray-700  sm:text-base">
   <div className="flex items-center gap-2">
     <FiPhone className="text-blue-600" />
     <strong>Phone:</strong> 9810152290 / 8860041466

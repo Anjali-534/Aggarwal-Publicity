@@ -21,10 +21,10 @@ export default function Director() {
                 {/* Right Side - Content */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
                   <h3 className="text-2xl font-bold text-gray-800 mb-1">
-                    Mr. Anil Aggarwal
+                    Mr. Anil Aggarwal (Garg)
                   </h3>
                   <p className="text-md text-blue-600 font-medium mb-4">
-                    Director, Aggarwal Publicity Marketing Pvt. Ltd.
+                    Director
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed mb-3">
                     Mr. Aggarwal is not just a successful businessman—he is a visionary leader whose impact goes beyond the chemical distribution industry. With decades of experience and unwavering dedication, he has guided the company with integrity and innovation.

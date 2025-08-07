@@ -4,7 +4,7 @@
 import { useState } from 'react';
 
 export function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', message: "" });
   const [status, setStatus] = useState('');
 
   async function handleSubmit(e) {

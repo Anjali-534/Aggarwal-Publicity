@@ -120,39 +120,39 @@ function PackagingOptions() {
 // Service Areas Scroll Cards
 const serviceData = [
   {
-    title: "Oil Scavengers",
-    description: "It is used as an additive in certain materials to derive unique properties and remove impurities.",
-    image: "/images/oil-scavengers.jpg",
+    title: "Resin & Adhesive Production",
+    description: "Used as a key building block for phenol-formaldehyde, urea-formaldehyde, and melamine-formaldehyde resins. These are essential in manufacturing plywood, particleboard, MDF, laminates, adhesives, and coatings for wood and furniture industries",
+       image:"/para.jpg",
   },
   {
-    title: "Resin",
-    description: "For manufacturing of Phenolic, Urea and Melamine Resins used in paints, coatings, and laminates.",
-    image: "/images/resin.jpg",
+    title: "Construction, Furniture & Automotive",
+    description: "Fueling the construction sector via robust resin production.Employed in automotive auxiliary materials, coatings, sealants, insulation, and high-performance plastics like POM (Delrin).",
+    image: "/para.jpg",
   },
   {
-    title: "Warehousing",
-    description: "It is used in warehouses & other rooms to disinfect and maintain hygienic storage conditions.",
-    image: "/images/warehousing.jpg",
+    title: "Agrochemicals",
+    description: "Acts as a precursor for pesticides, herbicides, fungicides, and other agrichemicals to boost crop yield and protection",
+    image: "/para.jpg",
   },
   {
-    title: "Warehousing",
-    description: "It is used in warehouses & other rooms to disinfect and maintain hygienic storage conditions.",
-    image: "/images/warehousing.jpg",
+    title: "Pharmaceuticals & Histology",
+    description: "Used to inactivate pathogens in vaccine production, and serve as tissue fixatives in laboratories and pathology.",
+    image: "/para.jpg",
   },
   {
-    title: "Warehousing",
-    description: "It is used in warehouses & other rooms to disinfect and maintain hygienic storage conditions.",
-    image: "/images/warehousing.jpg",
+    title: "Disinfection, Fumigation & Preservation",
+    description: "Depolymerizes into formaldehyde, enabling applications as a fumigant, disinfectant, and waterproofing agent—used in funeral preparations, textile finishing, and sterilizing environments.",
+    image: "/para.jpg",
   },
   {
-    title: "Warehousing",
-    description: "It is used in warehouses & other rooms to disinfect and maintain hygienic storage conditions.",
-    image: "/images/warehousing.jpg",
+    title: "Printing, Dyes & Paper/Textile Finishing",
+    description: "Utilized in inks, finishes, dyes, varnishes, and composite printing systems for paper and textiles.",
+    image: "/para.jpg",
   },
   {
-    title: "Warehousing",
-    description: "It is used in warehouses & other rooms to disinfect and maintain hygienic storage conditions.",
-    image: "/images/warehousing.jpg",
+    title: " Consumer & Personal Care Products",
+    description: "Functions in preservatives, conditioners, and film-formers in personal care items and household cleaners",
+    image: "/para.jpg",
   },
   // Add more items as needed
 ];
