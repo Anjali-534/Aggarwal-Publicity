@@ -3,42 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+
 export default function SubNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-white hidden md:block shadow-md fixed top-16 left-0 w-full z-40">
-      <div className="container mx-auto flex space-x-2 items-center px-4 py-4 mt-4">
+      <div className="container mx-auto flex justify-between items-center px-4 py-4 mt-4">
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex justify-center space-x-8">
+        <div className="hidden md:flex space-x-8">
           <Link href="/" className="hover:text-gray-500">Home</Link>
           <Link href="/about" className="hover:text-gray-500">About Us</Link>
           <Link href="/products" className="hover:text-gray-500">Products</Link>
-          
-          
-          {/* Dropdowns */}
-          {/* <Dropdown  
-            title="About Us" 
-            src="/director.jpg" 
-            alt="Our Director"
-            className="min-w-30 h-auto rounded-md"
-            links={[
-              { title: "Our Journey", link: "/about", description: "Aggarwal Publicity began as a small venture with a vision to revolutionize marketing through innovative advertising solutions. 🚀" },
-              { title: "Our Director", link: "/about" }
-            ]} 
-          /> */}
-
-          {/* <Dropdown title="Products" links={[
-            { title: "Paraformaldehyde", link: "/products" },
-            { title: "Pthalic Anhydride", link: "/products" }
-          ]} /> */}
-
-          <div>
-            <Link href="/contact" className="hover:text-gray-500">Contact Us</Link></div><div>
-            <Link href="/Social_resp" className="hover:text-gray-500">Social Responsibility</Link>
-          </div>
+          <Link href="/contact" className="hover:text-gray-500">Contact Us</Link>
+          <Link href="/Social_resp" className="hover:text-gray-500">Social Responsibility</Link>
         </div>
+
+        {/* KYC Button */}
+        
 
         {/* Mobile Menu Button */}
         <button 
@@ -48,8 +31,6 @@ export default function SubNav() {
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
-
-    
     </nav>
   );
 }
@@ -93,7 +74,6 @@ const Dropdown = ({ title, links, src, alt, className }) => {
               >
                 {item.title}
               </Link>
-              {/* Display description if available */}
               {item.description && (
                 <p className="px-4 py-2 text-sm text-gray-600">{item.description}</p>
               )}

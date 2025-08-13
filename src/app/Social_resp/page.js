@@ -86,45 +86,46 @@ function CommunitySection() {
         </p>
 
         {/* Initiative Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
-          {/* Agriculture & Horticulture */}
-          <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <Image src="/agriculture-icon.png" alt="Agriculture & Horticulture" width={48} height={48} className="w-12 h-12 mb-2" priority />
-            <p className="font-semibold">Agriculture & Horticulture Initiative</p>
-          </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-10">
+  {/* Save Trees */}
+  <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <Image src="/treee.png" alt="Save Trees" width={80} height={80} className="w-20 h-20 mb-4" priority />
+    <p className="text-lg font-semibold text-gray-800">Save Trees</p>
+  </div>
 
-          {/* Women's Initiative */}
-          <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <Image src="/women-icon.png" alt="Women&apos;s Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
-            <p className="font-semibold">Women’s Initiative</p>
-          </div>
+  {/* Save Money */}
+  <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <Image src="/money.png" alt="Save Money" width={80} height={80} className="w-20 h-20 mb-4" priority />
+    <p className="text-lg font-semibold text-gray-800">Save Money</p>
+  </div>
 
-          {/* Education Initiative */}
-          <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <Image src="/education-icon.png" alt="Education Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
-            <p className="font-semibold">Education Initiative</p>
-          </div>
+  {/* Save Books */}
+  <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <Image src="/book.jpg" alt="Save Books" width={80} height={80} className="w-20 h-20 mb-4" priority />
+    <p className="text-lg font-semibold text-gray-800">Save Books</p>
+  </div>
 
-          {/* Water Initiative */}
-          <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <Image src="/water-icon.png" alt="Water Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
-            <p className="font-semibold">Water Initiative</p>
-          </div>
+  {/* Promoting Education */}
+  <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <Image src="/edu.png" alt="Promoting Education" width={80} height={80} className="w-20 h-20 mb-4" priority />
+    <p className="text-lg font-semibold text-gray-800">Promoting Education</p>
+  </div>
 
-          {/* Skill Initiative */}
-          <div className="bg-gray-200 text-gray-800 p-4 rounded-lg flex flex-col items-center">
-            <Image src="/skill-icon.png" alt="Skill Initiative" width={48} height={48} className="w-12 h-12 mb-2 opacity-50" priority />
-            <p className="font-semibold">Skill Initiative</p>
-          </div>
-          
-        </div>
+  {/* Save Environment */}
+  <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <Image src="/env.png" alt="Save Environment" width={80} height={80} className="w-20 h-20 mb-4" priority />
+    <p className="text-lg font-semibold text-gray-800">Save Environment</p>
+  </div>
+</div>
+
+
       </div>
     </section>
   );
 }
 function Aim() {
   return (
-    <section className="bg-amber-300 text-center py-13 px-6">
+    <section className="bg-amber-100 text-center py-13 px-6">
         <h3 className="text-lg ml-1.5 font-semibold">Our Aim</h3>
         <h2 className="text-4xl font-bold mt-2">The Director</h2>
       <div className="container mx-auto">

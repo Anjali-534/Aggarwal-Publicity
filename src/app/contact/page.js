@@ -1,6 +1,7 @@
 'use client';
 
-import { ContactForm } from "@/components/contact-form";
+import { KYCForm} from "@/components/Kyc-form";
+
 import React from "react";
 import {
   FaFacebookF,
@@ -85,7 +86,7 @@ export default function ContactPage() {
     <div className="bg-white">
       {/* 🟦 Top Banner Section */}
       <div
-        className="w-full h-75 bg-cover bg-center flex flex-col justify-center items-center text-white text-center"
+        className="w-full h-full mt-13 bg-cover bg-center flex flex-col justify-center items-center text-white text-center"
         style={{ backgroundImage: "url('/contact_banner.png')" }}
       >
         <div className="px-4 py-8 rounded">
@@ -138,8 +139,8 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 h-full md:h-[60%] p-8 rounded-lg shadow-md">
-            <ContactForm />
+          <div className="bg-gray-50 h-full  p-8 rounded-lg shadow-md">
+            <KYCForm />
           </div>
         </div>
       </div>
