@@ -139,9 +139,10 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 h-full text-black  p-8 rounded-lg shadow-md">
-            <KYCForm />
-          </div>
+          <div className="bg-gray-100 md:bg-gray-50 h-full text-gray-800 p-8 rounded-lg shadow-md">
+  <KYCForm />
+</div>
+
         </div>
       </div>
     </div>
