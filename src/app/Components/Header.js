@@ -84,7 +84,7 @@ export default function Header() {
           <MobileLink href="/" onClick={handleCloseMenu}>Home</MobileLink>
           <MobileLink href="/about" onClick={handleCloseMenu}>About Us</MobileLink>
           <MobileLink href="/products" onClick={handleCloseMenu}>Products</MobileLink>
-          <MobileLink href="/social" onClick={handleCloseMenu}>Social Responsibility</MobileLink>
+          <MobileLink href="/Social_resp" onClick={handleCloseMenu}>Social Responsibility</MobileLink>
           <MobileLink href="/contact" onClick={handleCloseMenu}>Contact Us</MobileLink>
 
          
